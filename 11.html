@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>練習十一</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .question-card {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        .question {
+            background-color: #4CAF50;
+            color: white;
+            padding: 15px;
+            margin-bottom: 0;
+        }
+        .answer-container {
+            padding: 0 15px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out, padding 0.3s ease;
+        }
+        .answer-container.show {
+            max-height: 500px; /* 調整這個值以適應你的最長答案 */
+            padding: 15px;
+        }
+        .answer {
+            opacity: 0;
+            transform: translateY(-20px);
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+        .answer-container.show .answer {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        button {
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: block;
+            width: 100%;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>4.1現在完成式 （Present Perfect Tense）</h1>
+        <h2>練習十一<h2>
+    </header>
+<style>
+header {
+    text-align: center;
+    margin-bottom: 30px;
+    padding: 20px;
+    background-color: #4CAF50;
+    color: white;
+    border-radius: 8px;
+}
+
+header h1 {
+    margin: 0 0 10px 0;
+    font-size: 28px;
+}
+
+header h2 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: normal;
+    opacity: 0.8;
+}
+</style>    
+    <div class="container">
+        將以下句子譯成英文，全部用現在完成式：
+        <div class="question-card">
+            <h2 class="question">
+                1.自從 1980 年，我就每天早上游泳。
+            </h2>
+            <div class="answer-container">
+                <div class="answer">
+                    <p>
+                        1.I have swum every morning since 1980.
+                    </p>
+                </div>
+            </div>
+            <button onclick="toggleAnswer(this)">顯示答案</button>
+        </div>
+        
+        <div class="question-card">
+            <h2 class="question">
+                2.我已收到了你的信。
+            </h2>
+            <div class="answer-container">
+                <div class="answer">
+                    <p>
+                        2.I have received your letter.
+                    </p>
+                </div>
+            </div>
+            <button onclick="toggleAnswer(this)">顯示答案</button>
+        </div>
+
+        <div class="question-card">
+            <h2 class="question">
+                3.我從未去過美國。
+            </h2>
+            <div class="answer-container">
+                <div class="answer">
+                    <p>
+                        3.I have never been to America.
+                    </p>
+                </div>
+            </div>
+            <button onclick="toggleAnswer(this)">顯示答案</button>
+        </div>
+
+        <div class="question-card">
+            <h2 class="question">
+                4.從他是一個小孩開始，他就是一個基督徒（ Christian）。
+            </h2>
+            <div class="answer-container">
+                <div class="answer">
+                    <p>
+                        4. He has been a Christian since he was a child.
+                    </p>
+                </div>
+            </div>
+            <button onclick="toggleAnswer(this)">顯示答案</button>
+        </div>
+
+        <div class="question-card">
+            <h2 class="question">
+                5.我見過你的祖父。
+            </h2>
+            <div class="answer-container">
+                <div class="answer">
+                    <p>
+                        5.I have seen your grandfather.
+                    </p>
+                </div>
+            </div>
+            <button onclick="toggleAnswer(this)">顯示答案</button>
+        </div>
+        <div class="question-card">
+            <h2 class="question">
+                6.你的弟弟一直住在這裡。
+            </h2>
+            <div class="answer-container">
+                <div class="answer">
+                    <p>
+                        6. Your brother has always lived here.
+                    </p>
+                </div>
+            </div>
+            <button onclick="toggleAnswer(this)">顯示答案</button>
+        </div>
+
+        <div class="question-card">
+            <h2 class="question">
+                7.他學鋼琴已經很久了。
+            </h2>
+            <div class="answer-container">
+                <div class="answer">
+                    <p>
+                        7. He has been learning to play the piano for a long time.
+                    </p>
+                </div>
+            </div>
+            <button onclick="toggleAnswer(this)">顯示答案</button>
+        </div>
+
+        <div class="question-card">
+            <h2 class="question">
+                8.我已寫了三封信給他，他都沒有回。
+            </h2>
+            <div class="answer-container">
+                <div class="answer">
+                    <p>
+                        8.I have already written three letters, but he didn't reply.
+                    </p>
+                </div>
+            </div>
+            <button onclick="toggleAnswer(this)">顯示答案</button>
+        </div>
+        <div class="question-card">
+            <h2 class="question">
+                9.過去三年我都在開這部車。
+            </h2>
+            <div class="answer-container">
+                <div class="answer">
+                    <p>
+                        9. For the past three years, I have driven this car.
+                    </p>
+                </div>
+            </div>
+            <button onclick="toggleAnswer(this)">顯示答案</button>
+        </div>
+        
+        <div class="question-card">
+            <h2 class="question">
+                10.自從 1975 年以來，他一直是一位老師。
+            </h2>
+            <div class="answer-container">
+                <div class="answer">
+                    <p>
+                        10. He has been a teacher since 1975.
+                    </p>
+                </div>
+            </div>
+            <button onclick="toggleAnswer(this)">顯示答案</button>
+        </div>
+        <div class="question-card">
+            <h2 class="question">
+                11.他教英文很久了。
+            </h2>
+            <div class="answer-container">
+                <div class="answer">
+                    <p>
+                        11.He has taught English for a long time.
+                    </p>
+                </div>
+            </div>
+            <button onclick="toggleAnswer(this)">顯示答案</button>
+        </div>
+        <div class="question-card">
+            <h2 class="question">
+                12.我曾經看過亂世佳人（ Gone with the Wind）。
+            </h2>
+            <div class="answer-container">
+                <div class="answer">
+                    <p>
+                        12.I have seen Gone with the Wind.
+                    </p>
+                </div>
+            </div>
+            <button onclick="toggleAnswer(this)">顯示答案</button>
+        </div>
+        <div class="question-card">
+            <h2 class="question">
+                13.我已吃過飯了。
+            </h2>
+            <div class="answer-container">
+                <div class="answer">
+                    <p>
+                        13.I have eaten.
+                    </p>
+                </div>
+            </div>
+            <button onclick="toggleAnswer(this)">顯示答案</button>
+        </div>
+        <div class="question-card">
+            <h2 class="question">
+                14.今年我去過海灘三次。
+            </h2>
+            <div class="answer-container">
+                <div class="answer">
+                    <p>
+                        14.I have been to the beach three times this year.
+                    </p>
+                </div>
+            </div>
+            <button onclick="toggleAnswer(this)">顯示答案</button>
+        </div>
+        <div class="question-card">
+            <h2 class="question">
+                15.我終其一生都愛你的。
+            </h2>
+            <div class="answer-container">
+                <div class="answer">
+                    <p>
+                        15.I have loved you all my life.
+                    </p>
+                </div>
+            </div>
+            <button onclick="toggleAnswer(this)">顯示答案</button>
+        </div>
+      
+    <script>
+        function toggleAnswer(button) {
+            var answerContainer = button.previousElementSibling;
+            answerContainer.classList.toggle('show');
+            button.textContent = answerContainer.classList.contains('show') ? '隱藏答案' : '顯示答案';
+        }
+    </script>
+</body>
+</html>
