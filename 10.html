@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>練習十</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .question-card {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        .question {
+            background-color: #4CAF50;
+            color: white;
+            padding: 15px;
+            margin-bottom: 0;
+        }
+        .answer-container {
+            padding: 0 15px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out, padding 0.3s ease;
+        }
+        .answer-container.show {
+            max-height: 500px; /* 調整這個值以適應你的最長答案 */
+            padding: 15px;
+        }
+        .answer {
+            opacity: 0;
+            transform: translateY(-20px);
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+        .answer-container.show .answer {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        button {
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: block;
+            width: 100%;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1></h1>
+        <h2>練習十<h2>
+    </header>
+<style>
+header {
+    text-align: center;
+    margin-bottom: 30px;
+    padding: 20px;
+    background-color: #4CAF50;
+    color: white;
+    border-radius: 8px;
+}
+
+header h1 {
+    margin: 0 0 10px 0;
+    font-size: 28px;
+}
+
+header h2 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: normal;
+    opacity: 0.8;
+}
+</style>    
+    <div class="container">
+        改正以下句子的錯誤
+        <div class="question-card">
+            <h2 class="question">
+                1. ＊They are driving when I went to see them yesterday.
+            </h2>
+            <div class="answer-container">
+                <div class="answer">
+                    <p>
+                        
+                    </p>
+                </div>
+            </div>
+            <button onclick="toggleAnswer(this)">顯示答案</button>
+        </div>
+        
+        <div class="question-card">
+            <h2 class="question">
+                2. ＊It rained here very often in Taipei.
+            </h2>
+            <div class="answer-container">
+                <div class="answer">
+                    <p>
+                        
+                    </p>
+                </div>
+            </div>
+            <button onclick="toggleAnswer(this)">顯示答案</button>
+        </div>
+
+        <div class="question-card">
+            <h2 class="question">
+                3. ＊He gives his book to his brother last month.
+            </h2>
+            <div class="answer-container">
+                <div class="answer">
+                    <p>
+                        3. They were singing when the train arrived in the station.
+                    </p>
+                </div>
+            </div>
+            <button onclick="toggleAnswer(this)">顯示答案</button>
+        </div>
+
+        <div class="question-card">
+            <h2 class="question">
+                4. ＊He go to work every morning.
+            </h2>
+            <div class="answer-container">
+                <div class="answer">
+                    <p>
+                        
+                    </p>
+                </div>
+            </div>
+            <button onclick="toggleAnswer(this)">顯示答案</button>
+        </div>
+
+        <div class="question-card">
+            <h2 class="question">
+                5. ＊He likes to told stories.
+            </h2>
+            <div class="answer-container">
+                <div class="answer">
+                    <p>
+                        
+                    </p>
+                </div>
+            </div>
+            <button onclick="toggleAnswer(this)">顯示答案</button>
+        </div>
+        <div class="question-card">
+            <h2 class="question">
+                6. ＊I like to went to church.
+            </h2>
+            <div class="answer-container">
+                <div class="answer">
+                    <p>
+                        
+                    </p>
+                </div>
+            </div>
+            <button onclick="toggleAnswer(this)">顯示答案</button>
+        </div>
+
+        <div class="question-card">
+            <h2 class="question">
+                7. ＊The sun sets now.
+            </h2>
+            <div class="answer-container">
+                <div class="answer">
+                    <p>
+                        
+                    </p>
+                </div>
+            </div>
+            <button onclick="toggleAnswer(this)">顯示答案</button>
+        </div>
+
+        <div class="question-card">
+            <h2 class="question">
+                8. ＊They are play the piano now.
+            </h2>
+            <div class="answer-container">
+                <div class="answer">
+                    <p>
+                        
+                    </p>
+                </div>
+            </div>
+            <button onclick="toggleAnswer(this)">顯示答案</button>
+        </div>
+        <div class="question-card">
+            <h2 class="question">
+                9. ＊I am love you.
+            </h2>
+            <div class="answer-container">
+                <div class="answer">
+                    <p>
+                        
+                    </p>
+                </div>
+            </div>
+            <button onclick="toggleAnswer(this)">顯示答案</button>
+        </div>
+        
+        <div class="question-card">
+            <h2 class="question">
+                10.＊He were a good student before.
+            </h2>
+            <div class="answer-container">
+                <div class="answer">
+                    <p>
+                        
+                    </p>
+                </div>
+            </div>
+            <button onclick="toggleAnswer(this)">顯示答案</button>
+        </div>
+        <div class="question-card">
+            <h2 class="question">
+                11.＊He goes to church last Sunday.
+            </h2>
+            <div class="answer-container">
+                <div class="answer">
+                    <p>
+                        
+                    </p>
+                </div>
+            </div>
+            <button onclick="toggleAnswer(this)">顯示答案</button>
+        </div>
+        <div class="question-card">
+            <h2 class="question">
+                12.＊It rains last night.
+            </h2>
+            <div class="answer-container">
+                <div class="answer">
+                    <p>
+                        
+                    </p>
+                </div>
+            </div>
+            <button onclick="toggleAnswer(this)">顯示答案</button>
+        </div>
+        <div class="question-card">
+            <h2 class="question">
+                13.＊I am playing when you called.
+            </h2>
+            <div class="answer-container">
+                <div class="answer">
+                    <p>
+                        
+                    </p>
+                </div>
+            </div>
+            <button onclick="toggleAnswer(this)">顯示答案</button>
+        </div>
+        <div class="question-card">
+            <h2 class="question">
+                14.＊It is raining when I drove to work last night.
+            </h2>
+            <div class="answer-container">
+                <div class="answer">
+                    <p>
+                        
+                    </p>
+                </div>
+            </div>
+            <button onclick="toggleAnswer(this)">顯示答案</button>
+        </div>
+        <div class="question-card">
+            <h2 class="question">
+                15.＊He do not know me.
+            </h2>
+            <div class="answer-container">
+                <div class="answer">
+                    <p>
+                        
+                    </p>
+                </div>
+            </div>
+            <button onclick="toggleAnswer(this)">顯示答案</button>
+        </div>
+        <div class="question-card">
+            <h2 class="question">
+                16.＊I were swimming when my mother came.
+            </h2>
+            <div class="answer-container">
+                <div class="answer">
+                    <p>
+                        
+                    </p>
+                </div>
+            </div>
+            <button onclick="toggleAnswer(this)">顯示答案</button>
+        </div>
+        <div class="question-card">
+            <h2 class="question">
+                17.＊They is singing now.
+            </h2>
+            <div class="answer-container">
+                <div class="answer">
+                    <p>
+                        
+                    </p>
+                </div>
+            </div>
+            <button onclick="toggleAnswer(this)">顯示答案</button>
+        </div>
+        <div class="question-card">
+            <h2 class="question">
+                18.＊He do not like to swim.
+            </h2>
+            <div class="answer-container">
+                <div class="answer">
+                    <p>
+                        
+                    </p>
+                </div>
+            </div>
+            <button onclick="toggleAnswer(this)">顯示答案</button>
+        </div>
+        <div class="question-card">
+            <h2 class="question">
+                19.＊He always wear a black coat.
+            </h2>
+            <div class="answer-container">
+                <div class="answer">
+                    <p>
+                        
+                    </p>
+                </div>
+            </div>
+            <button onclick="toggleAnswer(this)">顯示答案</button>
+        </div>
+        <div class="question-card">
+            <h2 class="question">
+                20.＊He is watch TV now.
+            </h2>
+            <div class="answer-container">
+                <div class="answer">
+                    <p>
+                        
+                    </p>
+                </div>
+            </div>
+            <button onclick="toggleAnswer(this)">顯示答案</button>
+        </div>
+    <script>
+        function toggleAnswer(button) {
+            var answerContainer = button.previousElementSibling;
+            answerContainer.classList.toggle('show');
+            button.textContent = answerContainer.classList.contains('show') ? '隱藏答案' : '顯示答案';
+        }
+    </script>
+</body>
+</html>
