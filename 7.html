@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>練習七</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .question-card {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        .question {
+            background-color: #4CAF50;
+            color: white;
+            padding: 15px;
+            margin-bottom: 0;
+        }
+        .answer-container {
+            padding: 0 15px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out, padding 0.3s ease;
+        }
+        .answer-container.show {
+            max-height: 500px; /* 調整這個值以適應你的最長答案 */
+            padding: 15px;
+        }
+        .answer {
+            opacity: 0;
+            transform: translateY(-20px);
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+        .answer-container.show .answer {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        button {
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: block;
+            width: 100%;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1></h1>
+        <h2>練習七<h2>
+    </header>
+<style>
+header {
+    text-align: center;
+    margin-bottom: 30px;
+    padding: 20px;
+    background-color: #4CAF50;
+    color: white;
+    border-radius: 8px;
+}
+
+header h1 {
+    margin: 0 0 10px 0;
+    font-size: 28px;
+}
+
+header h2 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: normal;
+    opacity: 0.8;
+}
+</style>    
+    <div class="container">
+        將以下句子譯成英文，用現在式，現在進行式或過去式：
+        <div class="question-card">
+            <h2 class="question">
+                1.他在打籃球。
+            </h2>
+            <div class="answer-container">
+                <div class="answer">
+                    <p>
+                        1. He is playing basketball now.
+                    </p>
+                </div>
+            </div>
+            <button onclick="toggleAnswer(this)">顯示答案</button>
+        </div>
+        
+        <div class="question-card">
+            <h2 class="question">
+                2.他喜歡打籃球。
+            </h2>
+            <div class="answer-container">
+                <div class="answer">
+                    <p>
+                        2. He likes playing basketball.
+                    </p>
+                </div>
+            </div>
+            <button onclick="toggleAnswer(this)">顯示答案</button>
+        </div>
+
+        <div class="question-card">
+            <h2 class="question">
+                3.他昨天打籃球。
+            </h2>
+            <div class="answer-container">
+                <div class="answer">
+                    <p>
+                        3. He played basketball yesterday.
+                    </p>
+                </div>
+            </div>
+            <button onclick="toggleAnswer(this)">顯示答案</button>
+        </div>
+
+        <div class="question-card">
+            <h2 class="question">
+                4.他每天騎腳踏車上學。
+            </h2>
+            <div class="answer-container">
+                <div class="answer">
+                    <p>
+                        4. He goes to school by bicycle every day.
+                    </p>
+                </div>
+            </div>
+            <button onclick="toggleAnswer(this)">顯示答案</button>
+        </div>
+
+        <div class="question-card">
+            <h2 class="question">
+                5.他昨天騎腳踏車到鄉下去。
+            </h2>
+            <div class="answer-container">
+                <div class="answer">
+                    <p>
+                        5. He went to the country by bicycle yesterday.
+                    </p>
+                </div>
+            </div>
+            <button onclick="toggleAnswer(this)">顯示答案</button>
+        </div>
+        <div class="question-card">
+            <h2 class="question">
+                6.我喜歡唱歌。
+            </h2>
+            <div class="answer-container">
+                <div class="answer">
+                    <p>
+                        6.I like singing.
+                    </p>
+                </div>
+            </div>
+            <button onclick="toggleAnswer(this)">顯示答案</button>
+        </div>
+
+        <div class="question-card">
+            <h2 class="question">
+                7.他正在唱歌。
+            </h2>
+            <div class="answer-container">
+                <div class="answer">
+                    <p>
+                        7. I watched two movies yesterday.
+                    </p>
+                </div>
+            </div>
+            <button onclick="toggleAnswer(this)">顯示答案</button>
+        </div>
+
+        <div class="question-card">
+            <h2 class="question">
+                8.你的爸爸昨天來看我。
+            </h2>
+            <div class="answer-container">
+                <div class="answer">
+                    <p>
+                        8. Your father came to see me yesterday.
+                    </p>
+                </div>
+            </div>
+            <button onclick="toggleAnswer(this)">顯示答案</button>
+        </div>
+        <div class="question-card">
+            <h2 class="question">
+                9.他的哥哥每天步行二公里。
+            </h2>
+            <div class="answer-container">
+                <div class="answer">
+                    <p>
+                        9. His older brother walks two kilometers.every day.
+                    </p>
+                </div>
+            </div>
+            <button onclick="toggleAnswer(this)">顯示答案</button>
+        </div>
+        
+        <div class="question-card">
+            <h2 class="question">
+                10.他的弟弟是個好孩子。
+            </h2>
+            <div class="answer-container">
+                <div class="answer">
+                    <p>
+                        10. His younger brother is a good boy.
+                    </p>
+                </div>
+            </div>
+            <button onclick="toggleAnswer(this)">顯示答案</button>
+        </div>
+        <div class="question-card">
+            <h2 class="question">
+                11.他去年非常虛弱。
+            </h2>
+            <div class="answer-container">
+                <div class="answer">
+                    <p>
+                        11. He was very weak last year.
+                    </p>
+                </div>
+            </div>
+            <button onclick="toggleAnswer(this)">顯示答案</button>
+        </div>
+        <div class="question-card">
+            <h2 class="question">
+                12.他正在打電話。
+            </h2>
+            <div class="answer-container">
+                <div class="answer">
+                    <p>
+                        12. He is making a phone call now.
+                    </p>
+                </div>
+            </div>
+            <button onclick="toggleAnswer(this)">顯示答案</button>
+        </div>
+        <div class="question-card">
+            <h2 class="question">
+                13.他每天都努力工作（ work hard）。
+            </h2>
+            <div class="answer-container">
+                <div class="answer">
+                    <p>
+                        13. He works hard every day.
+                    </p>
+                </div>
+            </div>
+            <button onclick="toggleAnswer(this)">顯示答案</button>
+        </div>
+        <div class="question-card">
+            <h2 class="question">
+                14.你的弟弟喜歡游泳。
+            </h2>
+            <div class="answer-container">
+                <div class="answer">
+                    <p>
+                        14. Your younger brother likes swimming.
+                    </p>
+                </div>
+            </div>
+            <button onclick="toggleAnswer(this)">顯示答案</button>
+        </div>
+        <div class="question-card">
+            <h2 class="question">
+                15.他過去是個好學生。
+            </h2>
+            <div class="answer-container">
+                <div class="answer">
+                    <p>
+                        15. He was a good student before.
+                    </p>
+                </div>
+            </div>
+            <button onclick="toggleAnswer(this)">顯示答案</button>
+        </div>
+      
+    <script>
+        function toggleAnswer(button) {
+            var answerContainer = button.previousElementSibling;
+            answerContainer.classList.toggle('show');
+            button.textContent = answerContainer.classList.contains('show') ? '隱藏答案' : '顯示答案';
+        }
+    </script>
+</body>
+</html>
