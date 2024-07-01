@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>練習十四</title>
+    <script src="Scripts/jquery-3.7.1.slim.min.js"></script>
+    <script src="Scripts/vue3.global.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .question-card {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        .question {
+            background-color: #4CAF50;
+            color: white;
+            padding: 15px;
+            margin-bottom: 0;
+        }
+        .answer-container {
+            padding: 0 15px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out, padding 0.3s ease;
+        }
+        .answer-container.show {
+            max-height: 500px; /* 調整這個值以適應你的最長答案 */
+            padding: 15px;
+        }
+        .answer {
+            opacity: 0;
+            transform: translateY(-20px);
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+        .answer-container.show .answer {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        button {
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: block;
+            width: 100%;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>4.2 現 在 完 成 進 行 式</h1>
+        <h2>練習十四<h2>
+    </header>
+<style>
+header {
+    text-align: center;
+    margin-bottom: 30px;
+    padding: 20px;
+    background-color: #4CAF50;
+    color: white;
+    border-radius: 8px;
+}
+
+header h1 {
+    margin: 0 0 10px 0;
+    font-size: 28px;
+}
+
+header h2 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: normal;
+    opacity: 0.8;
+}
+</style>
+<div id="app">
+    <div class="container">
+        將以下的句子譯成英文，全部用現在完成進行式：
+        <div v-for="item in items" :key="item.Col1" class="question-card">
+            <h2 class="question">
+                {{item.Col1}}
+            </h2>
+            <div class="answer-container">
+                <div class="answer">
+                    <p>
+                        {{item.Col2}}
+                    </p>
+                </div>
+            </div>
+            <button onclick="toggleAnswer(this)">顯示答案</button>
+        </div>
+    </div>
+</div>
+
+    <script>
+        function toggleAnswer(button) {
+            var answerContainer = button.previousElementSibling;
+            answerContainer.classList.toggle('show');
+            button.textContent = answerContainer.classList.contains('show') ? '隱藏答案' : '顯示答案';
+        }
+    </script>
+
+<script>
+    var vd;
+    vd = [
+        {
+            Col1: "1. 自從我們是小孩子起，我們就一直努力工作。",
+            Col2: "1. We have been working hard since we werellittle kids."
+        },
+        {
+            Col1: "2. 從去年起，他就在唸英文。",
+            Col2: "2. Since last year, he has been studying English."
+        },
+        {
+            Col1: "3. 從昨天起，就一直在下雨。",
+            Col2: "3. It has been raining since yesterday."
+        },
+        {
+            Col1: "4. 從五時起，他就在做功課（ do homework）。",
+            Col2: "4. Since five o'clock, he has been doing his homework."
+        },
+        {
+            Col1: "5. 從三歲起，我就一直住在台中。",
+            Col2: "5.I have been living in Taichung since I was three years old."
+        }
+    ];
+
+    // 使用 Vue 3 的 createApp 方法來創建應用
+    const { createApp } = Vue;
+    const app = createApp({
+        data() {
+            return {
+                items: vd
+            }
+        },
+    });
+    app.mount('#app');
+</script>
+</body>
+</html>

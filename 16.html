@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>練習十六</title>
+    <script src="Scripts/jquery-3.7.1.slim.min.js"></script>
+    <script src="Scripts/vue3.global.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .question-card {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        .question {
+            background-color: #4CAF50;
+            color: white;
+            padding: 15px;
+            margin-bottom: 0;
+        }
+        .answer-container {
+            padding: 0 15px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out, padding 0.3s ease;
+        }
+        .answer-container.show {
+            max-height: 500px; /* 調整這個值以適應你的最長答案 */
+            padding: 15px;
+        }
+        .answer {
+            opacity: 0;
+            transform: translateY(-20px);
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+        .answer-container.show .answer {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        button {
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: block;
+            width: 100%;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>4.3 過 去 完 成 進 行 式</h1>
+        <h2>練習十六<h2>
+    </header>
+<style>
+header {
+    text-align: center;
+    margin-bottom: 30px;
+    padding: 20px;
+    background-color: #4CAF50;
+    color: white;
+    border-radius: 8px;
+}
+
+header h1 {
+    margin: 0 0 10px 0;
+    font-size: 28px;
+}
+
+header h2 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: normal;
+    opacity: 0.8;
+}
+</style>
+<div id="app">
+    <div class="container">
+        將以下的中文句子譯成英文，選適宜的時態。
+        <div v-for="item in items" :key="item.Col1" class="question-card">
+            <h2 class="question">
+                {{item.Col1}}
+            </h2>
+            <div class="answer-container">
+                <div class="answer">
+                    <p>
+                        {{item.Col2}}
+                    </p>
+                </div>
+            </div>
+            <button onclick="toggleAnswer(this)">顯示答案</button>
+        </div>
+    </div>
+</div>
+
+    <script>
+        function toggleAnswer(button) {
+            var answerContainer = button.previousElementSibling;
+            answerContainer.classList.toggle('show');
+            button.textContent = answerContainer.classList.contains('show') ? '隱藏答案' : '顯示答案';
+        }
+    </script>
+
+<script>
+    var vd;
+    vd = [
+        {
+            Col1: "1.他昨天去看你的時候，你在唱歌。",
+            Col2: "1. You were singing when he went to see you yesterday."
+        },
+        {
+            Col1: "2.他從前是個好孩子。",
+            Col2: "2. He had been a good boy."
+        },
+        {
+            Col1: "3.他們都喜歡打籃球。",
+            Col2: "3. All of them like to play basketball."
+        },
+        {
+            Col1: "4.我們正在看電視。",
+            Col2: "4. We are watching TV now."
+        },
+        {
+            Col1: "5.你在台灣住了很久了。",
+            Col2: "5. You have lived in Taiwan for a long time."
+        },
+        {
+            Col1: "6.我已經看完了這本書",
+            Col2: "6.I have already read over this book."
+        },
+        {
+            Col1: "7.他們一直都住在這裡。",
+            Col2: "7. They have lived here all the time."
+        },
+        {
+            Col1: "8.我來以前，曾去過教堂。",
+            Col2: "8.I had gone to church before coming here."
+        },
+        {
+            Col1: "9.他喜歡看日出。",
+            Col2: "9. He likes to watch the sunrise."
+        },
+        {
+            Col1: "10.他喜歡游泳。",
+            Col2: "10. He likes swimming."
+        },
+        {
+            Col1: "11.他自從六歲起，就一直在學鋼琴（ piano）。",
+            Col2: "11. He has been learning to play the piano since he was six years old."
+        },
+        {
+            Col1: "12.他過去是個強壯的孩子。",
+            Col2: "12. He used to be a strong boy."
+        },
+        {
+            Col1: "13.在他生病以前，他曾是個非常健康（ healthy）的人。",
+            Col2: "13. He had been a very healthy man before he got sick."
+        },
+        {
+            Col1: "14.當火車進站時，人們在跳舞。",
+            Col2: "14. People were dancing when the train arrived at the station."
+        },
+        {
+            Col1: "15.在戰爭爆發（ break out）以前，他曾是個音樂家（ musician）。",
+            Col2: "15. He had been a musician before the war broke out."
+        },
+        {
+            Col1: "16.我曾見過你。",
+            Col2: "16.I have seen you before."
+        },
+        {
+            Col1: "17.我去年見過你。",
+            Col2: "17.I saw you last year."
+        },
+        {
+            Col1: "18.我已經將信寫好了。",
+            Col2: "18.I have already written the letter."
+        },
+        {
+            Col1: "19.自從 1974 年以來，我就是一個軍人（ soldier）。",
+            Col2: "19. Since 1974,I have been a soldier."
+        },
+        {
+            Col1: "20.我讀了很多英文書。",
+            Col2: "20.I have read many English books."
+        }
+    ];
+
+    // 使用 Vue 3 的 createApp 方法來創建應用
+    const { createApp } = Vue;
+    const app = createApp({
+        data() {
+            return {
+                items: vd
+            }
+        },
+    });
+    app.mount('#app');
+</script>
+</body>
+</html>

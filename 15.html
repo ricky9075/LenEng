@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>練習十五</title>
+    <script src="Scripts/jquery-3.7.1.slim.min.js"></script>
+    <script src="Scripts/vue3.global.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .question-card {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        .question {
+            background-color: #4CAF50;
+            color: white;
+            padding: 15px;
+            margin-bottom: 0;
+        }
+        .answer-container {
+            padding: 0 15px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out, padding 0.3s ease;
+        }
+        .answer-container.show {
+            max-height: 500px; /* 調整這個值以適應你的最長答案 */
+            padding: 15px;
+        }
+        .answer {
+            opacity: 0;
+            transform: translateY(-20px);
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+        .answer-container.show .answer {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        button {
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: block;
+            width: 100%;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>4.3 過 去 完 成 進 行 式</h1>
+        <h2>練習十五<h2>
+    </header>
+<style>
+header {
+    text-align: center;
+    margin-bottom: 30px;
+    padding: 20px;
+    background-color: #4CAF50;
+    color: white;
+    border-radius: 8px;
+}
+
+header h1 {
+    margin: 0 0 10px 0;
+    font-size: 28px;
+}
+
+header h2 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: normal;
+    opacity: 0.8;
+}
+</style>
+<div id="app">
+    <div class="container">
+        將以下中文句子譯成英文，每一句都要用過去式和過去完成式：
+        <div v-for="item in items" :key="item.Col1" class="question-card">
+            <h2 class="question">
+                {{item.Col1}}
+            </h2>
+            <div class="answer-container">
+                <div class="answer">
+                    <p>
+                        {{item.Col2}}
+                    </p>
+                </div>
+            </div>
+            <button onclick="toggleAnswer(this)">顯示答案</button>
+        </div>
+    </div>
+</div>
+
+    <script>
+        function toggleAnswer(button) {
+            var answerContainer = button.previousElementSibling;
+            answerContainer.classList.toggle('show');
+            button.textContent = answerContainer.classList.contains('show') ? '隱藏答案' : '顯示答案';
+        }
+    </script>
+
+<script>
+    var vd;
+    vd = [
+        {
+            Col1: "1.我十四歲以前，就曾見過你的母親。",
+            Col2: "1.I had met your mother before I was fourteen years old."
+        },
+        {
+            Col1: "2.我 1974 年以前，曾去過美國。",
+            Col2: "2.I had been to America before 1974."
+        },
+        {
+            Col1: "3.六年前，他曾唸過聖經（ the Bible）。",
+            Col2: "3.He had read the Bible six years ago."
+        },
+        {
+            Col1: "4.我唸大學以前，曾經是個工程師（ engineer）。",
+            Col2: "4.I had been an engineer before 1 studied in the university."
+        },
+        {
+            Col1: "5.你來以前，我曾打電話給你。",
+            Col2: "5.I had called you before you came."
+        },
+        {
+            Col1: "6.在我昨天晚上吃飯以前，曾和李先生見過面。",
+            Col2: "6.I had met Mr. Lee before I had dinner with him last night."
+        },
+        {
+            Col1: "7.在他辭職（ resign）以前，他是個好校長（ president）。",
+            Col2: "7.He had been a good president before he resigned."
+        },
+        {
+            Col1: "8.在他去世（ die），他是個好醫生。",
+            Col2: "8.He had been a good doctor before he died."
+        },
+        {
+            Col1: "9.在他到教堂以前，他一直在練習唱歌。",
+            Col2: "9.He had been practiced singing before he started going to the church. "
+        },
+        {
+            Col1: "10.在今天早上八時以前，天一直在下雨。",
+            Col2: "10.It had been raining before eight o'clock this morning."
+        }
+    ];
+
+    // 使用 Vue 3 的 createApp 方法來創建應用
+    const { createApp } = Vue;
+    const app = createApp({
+        data() {
+            return {
+                items: vd
+            }
+        },
+    });
+    app.mount('#app');
+</script>
+</body>
+</html>
