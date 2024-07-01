@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>練習三十</title>
+    <script src="Scripts/jquery-3.7.1.slim.min.js"></script>
+    <script src="Scripts/vue3.global.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .question-card {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        .question {
+            background-color: #4CAF50;
+            color: white;
+            padding: 15px;
+            margin-bottom: 0;
+        }
+        .answer-container {
+            padding: 0 15px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out, padding 0.3s ease;
+        }
+        .answer-container.show {
+            max-height: 500px; /* 調整這個值以適應你的最長答案 */
+            padding: 15px;
+        }
+        .answer {
+            opacity: 0;
+            transform: translateY(-20px);
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+        .answer-container.show .answer {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        button {
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: block;
+            width: 100%;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>8.3 有 助 動 詞 肯 定 句 子 的 被 動 語 氣</h1>
+        <h2>練習三十<h2>
+    </header>
+<style>
+header {
+    text-align: center;
+    margin-bottom: 30px;
+    padding: 20px;
+    background-color: #4CAF50;
+    color: white;
+    border-radius: 8px;
+}
+
+header h1 {
+    margin: 0 0 10px 0;
+    font-size: 28px;
+}
+
+header h2 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: normal;
+    opacity: 0.8;
+}
+</style>
+<div id="app">
+    <div class="container">
+        將以下的句子改成被動語氣：
+        <div v-for="item in items" :key="item.Col1" class="question-card">
+            <h2 class="question">
+                {{item.Col1}}
+            </h2>
+            <div class="answer-container">
+                <div class="answer">
+                    <p>
+                        {{item.Col2}}
+                    </p>
+                </div>
+            </div>
+            <button onclick="toggleAnswer(this)">顯示答案</button>
+        </div>
+    </div>
+</div>
+
+    <script>
+        function toggleAnswer(button) {
+            var answerContainer = button.previousElementSibling;
+            answerContainer.classList.toggle('show');
+            button.textContent = answerContainer.classList.contains('show') ? '隱藏答案' : '顯示答案';
+        }
+    </script>
+
+<script>
+    var vd;
+    vd = [
+        {
+            Col1: "1. He has written three novels.",
+            Col2: "1. Three novels have been written by him."
+        },
+        {
+            Col1: "2. He will write that letter.",
+            Col2: "2. That letter will be written by him."
+        },
+        {
+            Col1: "3. They will sing these songs tomorrow.",
+            Col2: "3. These songs will be sung by them tomorrow."
+        },
+        {
+            Col1: "4. He will give the speech.",
+            Col2: "4. The speech will be given by him."
+        },
+        {
+            Col1: "5. They are painting the house.",
+            Col2: "5. The house is being painted by them."
+        },
+        {
+            Col1: "6. I have given him three books.",
+            Col2: "6. Three books have been given to him by me."
+        },
+        {
+            Col1: "7. I can do this job.",
+            Col2: "7. This job can be done by me."
+        },
+        {
+            Col1: "8. He had told me that story before we went there.",
+            Col2: "8. That story had been told to me by him before we went there."
+        },
+        {
+            Col1: "9. Teachers should help the students.",
+            Col2: "9. The students should be helped by the teachers."
+        },
+        {
+            Col1: "10.He is writing the report now.",
+            Col2: "10. The report is being written by him now."
+        },
+        {
+            Col1: "11.The students must read this book.",
+            Col2: "11. This book must be read by the students."
+        },
+        {
+            Col1: "12.I have to give this letter to my mother tonight.",
+            Col2: "12. This letter has to be given to my mother by me tonight."
+        },
+        {
+            Col1: "13.All citizens ought to obey the law.",
+            Col2: "13. The law ought to be obeyed by all citizens."
+        },
+        {
+            Col1: "14.He has eaten all of the cakes.",
+            Col2: "14. All of the cakes have been eaten by him."
+        },
+        {
+            Col1: "15.The reporters were taking pictures when the storm started.",
+            Col2: "15. Pictures were being taken by the reporters when the storm started."
+        },
+        {
+            Col1: "16.He had finished the work before five o'clock last night.",
+            Col2: "16. The work had been finished by him before five o'clock last night."
+        },
+        {
+            Col1: "17.Peter will write that letter.",
+            Col2: "17. That letter will be written by Peter."
+        },
+        {
+            Col1: "18.John has received my letter.",
+            Col2: "18. My letter has been received by John."
+        },
+        {
+            Col1: "19.Millions of people saw the movie “Gone with the wind”.",
+            Col2: "19. The movie Gone with the Wind was seen by millions of people"
+        },
+        {
+            Col1: "20.He has proved that theorem.",
+            Col2: "20. That theorem has been proved by him."
+        }
+    ];
+
+    // 使用 Vue 3 的 createApp 方法來創建應用
+    const { createApp } = Vue;
+    const app = createApp({
+        data() {
+            return {
+                items: vd
+            }
+        },
+    });
+    app.mount('#app');
+</script>
+</body>
+</html>

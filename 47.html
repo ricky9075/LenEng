@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>練習四十七</title>
+    <script src="Scripts/jquery-3.7.1.slim.min.js"></script>
+    <script src="Scripts/vue3.global.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .question-card {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        .question {
+            background-color: #4CAF50;
+            color: white;
+            padding: 15px;
+            margin-bottom: 0;
+        }
+        .answer-container {
+            padding: 0 15px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out, padding 0.3s ease;
+        }
+        .answer-container.show {
+            max-height: 500px; /* 調整這個值以適應你的最長答案 */
+            padding: 15px;
+        }
+        .answer {
+            opacity: 0;
+            transform: translateY(-20px);
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+        .answer-container.show .answer {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        button {
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: block;
+            width: 100%;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>10.3 不定詞（Infinitives）作為形容詞和副詞</h1>
+        <h2>練習四十七<h2>
+    </header>
+<style>
+header {
+    text-align: center;
+    margin-bottom: 30px;
+    padding: 20px;
+    background-color: #4CAF50;
+    color: white;
+    border-radius: 8px;
+}
+
+header h1 {
+    margin: 0 0 10px 0;
+    font-size: 28px;
+}
+
+header h2 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: normal;
+    opacity: 0.8;
+}
+</style>
+<div id="app">
+    <div class="container">
+        將以下句子改成英文：
+        <div v-for="item in items" :key="item.Col1" class="question-card">
+            <h2 class="question">
+                {{item.Col1}}
+            </h2>
+            <div class="answer-container">
+                <div class="answer">
+                    <p>
+                        {{item.Col2}}
+                    </p>
+                </div>
+            </div>
+            <button onclick="toggleAnswer(this)">顯示答案</button>
+        </div>
+    </div>
+</div>
+
+    <script>
+        function toggleAnswer(button) {
+            var answerContainer = button.previousElementSibling;
+            answerContainer.classList.toggle('show');
+            button.textContent = answerContainer.classList.contains('show') ? '隱藏答案' : '顯示答案';
+        }
+    </script>
+
+<script>
+    var vd;
+    vd = [
+        {
+            Col1: "1. 我們都有納稅的義務。",
+            Col2: "1. We all have the duty to pay taxes."
+        },
+        {
+            Col1: "2. 我們都有保持緘默（ remain silent）的權利。",
+            Col2: "2. We have the right to remain silent."
+        },
+        {
+            Col1: "3. 他有游泳的天才。",
+            Col2: "3. He has the talent to swim."
+        },
+        {
+            Col1: "4. 我已無錢可花。",
+            Col2: "4.I have no money left to spend."
+        },
+        {
+            Col1: "5. 我無處可去。",
+            Col2: "5.I have no place to go."
+        },
+        {
+            Col1: "6. 他太累了，不能開車了。（ too… ..to… ..）",
+            Col2: "6. He is too tired to drive."
+        },
+        {
+            Col1: "7. 我很高興看到你。",
+            Col2: "7.I am glad to see you."
+        },
+        {
+            Col1: "8. 他夠聰明，可以進入大學。（ enough… ..to… ..）",
+            Col2: "8. He is smart enough to get into college."
+        },
+        {
+            Col1: "9. 我的工作是教小孩英文。",
+            Col2: "9. My job is to teach kids English."
+        },
+        {
+            Col1: "10. 我看到你，感到很意外。（ surprised to… ...）",
+            Col2: "10.I was surprised to see you."
+        },
+        {
+            Col1: "11. 我們有很多可談的事。",
+            Col2: "11. We have lots of things to talk about."
+        },
+        {
+            Col1: "12. 他沒有可以交談的朋友。",
+            Col2: "12. He has no friends to talk to."
+        },
+    ];
+
+    // 使用 Vue 3 的 createApp 方法來創建應用
+    const { createApp } = Vue;
+    const app = createApp({
+        data() {
+            return {
+                items: vd
+            }
+        },
+    });
+    app.mount('#app');
+</script>
+</body>
+</html>

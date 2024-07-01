@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>練習四十八</title>
+    <script src="Scripts/jquery-3.7.1.slim.min.js"></script>
+    <script src="Scripts/vue3.global.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .question-card {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        .question {
+            background-color: #4CAF50;
+            color: white;
+            padding: 15px;
+            margin-bottom: 0;
+        }
+        .answer-container {
+            padding: 0 15px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out, padding 0.3s ease;
+        }
+        .answer-container.show {
+            max-height: 500px; /* 調整這個值以適應你的最長答案 */
+            padding: 15px;
+        }
+        .answer {
+            opacity: 0;
+            transform: translateY(-20px);
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+        .answer-container.show .answer {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        button {
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: block;
+            width: 100%;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>11.1 問題型式的名詞子句</h1>
+        <h2>練習四十八<h2>
+    </header>
+<style>
+header {
+    text-align: center;
+    margin-bottom: 30px;
+    padding: 20px;
+    background-color: #4CAF50;
+    color: white;
+    border-radius: 8px;
+}
+
+header h1 {
+    margin: 0 0 10px 0;
+    font-size: 28px;
+}
+
+header h2 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: normal;
+    opacity: 0.8;
+}
+</style>
+<div id="app">
+    <div class="container">
+        將以下的中文句子譯成英文：
+        <div v-for="item in items" :key="item.Col1" class="question-card">
+            <h2 class="question">
+                {{item.Col1}}
+            </h2>
+            <div class="answer-container">
+                <div class="answer">
+                    <p>
+                        {{item.Col2}}
+                    </p>
+                </div>
+            </div>
+            <button onclick="toggleAnswer(this)">顯示答案</button>
+        </div>
+    </div>
+</div>
+
+    <script>
+        function toggleAnswer(button) {
+            var answerContainer = button.previousElementSibling;
+            answerContainer.classList.toggle('show');
+            button.textContent = answerContainer.classList.contains('show') ? '隱藏答案' : '顯示答案';
+        }
+    </script>
+
+<script>
+    var vd;
+    vd = [
+        {
+            Col1: "1. 我不知道你是誰。",
+            Col2: "1.I do not know who you are."
+        },
+        {
+            Col1: "2. 請告訴我你是否是美國人?",
+            Col2: "2. Please tell me whether you are an American or not?"
+        },
+        {
+            Col1: "3. 我不記得你是否喝咖啡。",
+            Col2: "3.I do not remember whether you drink coffee or not."
+        },
+        {
+            Col1: "4. 請問你的姊姊她去年是否去過日本。",
+            Col2: "4. Please ask your sister if she went to Japan last year."
+        },
+        {
+            Col1: "5. 你知道他是誰嗎？",
+            Col2: "5. Do you know who he is?"
+        },
+        {
+            Col1: "6. 他從哪裡來的是一個謎（ puzzle）。",
+            Col2: "6. Where he is from remains a puzzle."
+        },
+        {
+            Col1: "7. 我要找出他哥哥會不會游泳。",
+            Col2: "7. I want to find out whether his brother can swim or not."
+        },
+        {
+            Col1: "8. 我知道他為何如此悲傷。",
+            Col2: "8.I know why he is so sad."
+        },
+        {
+            Col1: "9. 你知道瑪麗什麼時候來嗎？",
+            Col2: "9. Do you know when Mary will come?"
+        },
+        {
+            Col1: "10. 你知道發生了什麼事嗎？",
+            Col2: "10. Do you know what happened?"
+        },
+        {
+            Col1: "11. 我知道天空為什麼是藍的",
+            Col2: "11.I know why the sky is blue."
+        },
+        {
+            Col1: "12. 請告訴我你去年去哪裡工作的。",
+            Col2: "12. Please tell me where you worked last year."
+        },
+        {
+            Col1: "13. 你知道他在談什麼嗎？",
+            Col2: "13. Do you know what he is talking about?"
+        },
+        {
+            Col1: "14. 我不懂他的問題是什麼。",
+            Col2: "14.I do not understand what his problem is."
+        },
+        {
+            Col1: "",
+            Col2: ""
+        },
+        {
+            Col1: "",
+            Col2: ""
+        },
+        {
+            Col1: "",
+            Col2: ""
+        },
+        {
+            Col1: "",
+            Col2: ""
+        },
+        {
+            Col1: "",
+            Col2: ""
+        },
+        {
+            Col1: "",
+            Col2: ""
+        },
+        {
+            Col1: "",
+            Col2: ""
+        },
+        {
+            Col1: "",
+            Col2: ""
+        },
+        {
+            Col1: "",
+            Col2: ""
+        },
+        {
+            Col1: "",
+            Col2: ""
+        },
+        {
+            Col1: "",
+            Col2: ""
+        },
+        {
+            Col1: "",
+            Col2: ""
+        },
+        {
+            Col1: "",
+            Col2: ""
+        },
+        {
+            Col1: "",
+            Col2: ""
+        },
+        {
+            Col1: "",
+            Col2: ""
+        },
+        {
+            Col1: "",
+            Col2: ""
+        },
+        {
+            Col1: "",
+            Col2: ""
+        },
+    ];
+
+    // 使用 Vue 3 的 createApp 方法來創建應用
+    const { createApp } = Vue;
+    const app = createApp({
+        data() {
+            return {
+                items: vd
+            }
+        },
+    });
+    app.mount('#app');
+</script>
+</body>
+</html>
