@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>練習二十三</title>
+    <script src="Scripts/jquery-3.7.1.slim.min.js"></script>
+    <script src="Scripts/vue3.global.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .question-card {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        .question {
+            background-color: #4CAF50;
+            color: white;
+            padding: 15px;
+            margin-bottom: 0;
+        }
+        .answer-container {
+            padding: 0 15px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out, padding 0.3s ease;
+        }
+        .answer-container.show {
+            max-height: 500px; /* 調整這個值以適應你的最長答案 */
+            padding: 15px;
+        }
+        .answer {
+            opacity: 0;
+            transform: translateY(-20px);
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+        .answer-container.show .answer {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        button {
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: block;
+            width: 100%;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>6.1 否 定 句 的 基 本 規 則</h1>
+        <h2>練習二十三<h2>
+    </header>
+<style>
+header {
+    text-align: center;
+    margin-bottom: 30px;
+    padding: 20px;
+    background-color: #4CAF50;
+    color: white;
+    border-radius: 8px;
+}
+
+header h1 {
+    margin: 0 0 10px 0;
+    font-size: 28px;
+}
+
+header h2 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: normal;
+    opacity: 0.8;
+}
+</style>
+<div id="app">
+    <div class="container">
+        將以下的肯定句子改成否定句子：
+        <div v-for="item in items" :key="item.Col1" class="question-card">
+            <h2 class="question">
+                {{item.Col1}}
+            </h2>
+            <div class="answer-container">
+                <div class="answer">
+                    <p>
+                        {{item.Col2}}
+                    </p>
+                </div>
+            </div>
+            <button onclick="toggleAnswer(this)">顯示答案</button>
+        </div>
+    </div>
+</div>
+
+    <script>
+        function toggleAnswer(button) {
+            var answerContainer = button.previousElementSibling;
+            answerContainer.classList.toggle('show');
+            button.textContent = answerContainer.classList.contains('show') ? '隱藏答案' : '顯示答案';
+        }
+    </script>
+
+<script>
+    var vd;
+    vd = [
+        {
+            Col1: "1.I saw your brother last night.",
+            Col2: "1.I didn't see your brother last night."
+        },
+        {
+            Col1: "2.I like apples.",
+            Col2: "2.I don't like apples."
+        },
+        {
+            Col1: "3.She is a beautiful girl.",
+            Col2: "3.She is not a beautiful girl."
+        },
+        {
+            Col1: "4.They can play violin very well.",
+            Col2: "4.They cannot play violin very well."
+        },
+        {
+            Col1: "5.Mr. Chang must answer the following questions.",
+            Col2: "5.Mr. Chang must not answer the following questions."
+        },
+        {
+            Col1: "6.He went to see his brother last night.",
+            Col2: "6.He didn't go to see his brother last night."
+        },
+        {
+            Col1: "7.He could sing many songs.",
+            Col2: "7.He couldn't sing many songs."
+        },
+        {
+            Col1: "8.He will buy this car.",
+            Col2: "8.He will not buy thiscar."
+        },
+        {
+            Col1: "9.It rained heavily last night.",
+            Col2: "9.It didn't rain heavily last night."
+        },
+        {
+            Col1: "10.I have lived here for three years.",
+            Col2: "10.I have not lived here for three years."
+        },
+        {
+            Col1: "11.He has to see his mother.",
+            Col2: "11.He doesn't have to see his mother."
+        },
+        {
+            Col1: "12.He had to stay here yesterday.",
+            Col2: "12.He didn't have to stay here yesterday."
+        }
+    ];
+
+    // 使用 Vue 3 的 createApp 方法來創建應用
+    const { createApp } = Vue;
+    const app = createApp({
+        data() {
+            return {
+                items: vd
+            }
+        },
+    });
+    app.mount('#app');
+</script>
+</body>
+</html>
