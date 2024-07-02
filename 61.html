@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>練習六十一</title>
+    <script src="Scripts/jquery-3.7.1.slim.min.js"></script>
+    <script src="Scripts/vue3.global.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .question-card {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        .question {
+            background-color: #4CAF50;
+            color: white;
+            padding: 15px;
+            margin-bottom: 0;
+        }
+        .answer-container {
+            padding: 0 15px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out, padding 0.3s ease;
+        }
+        .answer-container.show {
+            max-height: 500px; /* 調整這個值以適應你的最長答案 */
+            padding: 15px;
+        }
+        .answer {
+            opacity: 0;
+            transform: translateY(-20px);
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+        .answer-container.show .answer {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        button {
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: block;
+            width: 100%;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>12.3 冠詞使用時的例外</h1>
+        <h2>練習六十一<h2>
+    </header>
+<style>
+header {
+    text-align: center;
+    margin-bottom: 30px;
+    padding: 20px;
+    background-color: #4CAF50;
+    color: white;
+    border-radius: 8px;
+}
+
+header h1 {
+    margin: 0 0 10px 0;
+    font-size: 28px;
+}
+
+header h2 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: normal;
+    opacity: 0.8;
+}
+</style>
+<div id="app">
+    <div class="container">
+        將以下的句子譯成成英文：
+        <div v-for="item in items" :key="item.Col1" class="question-card">
+            <h2 class="question">
+                {{item.Col1}}
+            </h2>
+            <div class="answer-container">
+                <div class="answer">
+                    <p>
+                        {{item.Col2}}
+                    </p>
+                </div>
+            </div>
+            <button onclick="toggleAnswer(this)">顯示答案</button>
+        </div>
+    </div>
+</div>
+
+    <script>
+        function toggleAnswer(button) {
+            var answerContainer = button.previousElementSibling;
+            answerContainer.classList.toggle('show');
+            button.textContent = answerContainer.classList.contains('show') ? '隱藏答案' : '顯示答案';
+        }
+    </script>
+
+<script>
+    var vd;
+    vd = [
+        {
+            Col1: "1. 狗會叫（ bark）。",
+            Col2: "1. Dogs can bark."
+        },
+        {
+            Col1: "2. 貓會抓老鼠。",
+            Col2: "2. Cats can catch mice."
+        },
+        {
+            Col1: "3. 有時候（ sometimes），痛苦是好的。",
+            Col2: "3. Sometimes, suffering is good."
+        },
+        {
+            Col1: "4. 我不喝茶。",
+            Col2: "4. I don't drink tea."
+        },
+        {
+            Col1: "5. 感覺到被愛是很重要的。",
+            Col2: "5. The feeling of being loved is very important."
+        },
+        {
+            Col1: "6. 說實話令人快樂。",
+            Col2: "6. Speaking the truth makes one happy."
+        },
+        {
+            Col1: "7. 我們需要愛。",
+            Col2: "7. We need love."
+        },
+        {
+            Col1: "8. 他是一個中國人。",
+            Col2: "8. He is a Chinese."
+        },
+        {
+            Col1: "9. 中國人喜歡喝茶。",
+            Col2: "9. The Chinese love drinking tea."
+        },
+        {
+            Col1: "10. 昨夜，城裡有一場火。",
+            Col2: "10. Last night, there was a fire in the city."
+        },
+        {
+            Col1: "11. 約翰來自美國。",
+            Col2: "11. John is from America."
+        },
+        {
+            Col1: "12. 法國在哪裡？",
+            Col2: "12. Where is France?"
+        },
+        {
+            Col1: "13. 我喜歡林肯總統。",
+            Col2: "13.I like President Lincoln."
+        },
+        {
+            Col1: "14. 黃河不是黃的。",
+            Col2: "14. The Yellow River is not yellow."
+        },
+        {
+            Col1: "15. 紅十字會已經有一百年了（ one hundred years old）。",
+            Col2: "15. The Red Cross is one hundred years old."
+        },
+        {
+            Col1: "16. 明朝是一個重要的朝代。",
+            Col2: "16. The Ming Dynasty was an important era."
+        },
+        {
+            Col1: "17. 你喜愛數學嗎？",
+            Col2: "17. Do you like mathematics?"
+        },
+        {
+            Col1: "18. 我今天早上沒有吃早飯。",
+            Col2: "18.I did not eat breakfast this morning."
+        },
+        {
+            Col1: "19. 我已吃過午飯。",
+            Col2: "19.I have already had lunch."
+        },
+        {
+            Col1: "20. 我昨天沒有去教堂。",
+            Col2: "20.I did not go to church yesterday."
+        },
+        {
+            Col1: "21. 我今年秋天要上大學。",
+            Col2: "21.I will go to college this fall."
+        },
+        {
+            Col1: "22. 游泳使我強壯。",
+            Col2: "22. Swimming makes me strong."
+        }
+    ];
+
+    // 使用 Vue 3 的 createApp 方法來創建應用
+    const { createApp } = Vue;
+    const app = createApp({
+        data() {
+            return {
+                items: vd
+            }
+        },
+    });
+    app.mount('#app');
+</script>
+</body>
+</html>

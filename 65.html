@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>練習六十五</title>
+    <script src="Scripts/jquery-3.7.1.slim.min.js"></script>
+    <script src="Scripts/vue3.global.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .question-card {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        .question {
+            background-color: #4CAF50;
+            color: white;
+            padding: 15px;
+            margin-bottom: 0;
+        }
+        .answer-container {
+            padding: 0 15px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out, padding 0.3s ease;
+        }
+        .answer-container.show {
+            max-height: 500px; /* 調整這個值以適應你的最長答案 */
+            padding: 15px;
+        }
+        .answer {
+            opacity: 0;
+            transform: translateY(-20px);
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+        .answer-container.show .answer {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        button {
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: block;
+            width: 100%;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>13.3 比較形的用法</h1>
+        <h2>練習六十五<h2>
+    </header>
+<style>
+header {
+    text-align: center;
+    margin-bottom: 30px;
+    padding: 20px;
+    background-color: #4CAF50;
+    color: white;
+    border-radius: 8px;
+}
+
+header h1 {
+    margin: 0 0 10px 0;
+    font-size: 28px;
+}
+
+header h2 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: normal;
+    opacity: 0.8;
+}
+</style>
+<div id="app">
+    <div class="container">
+        將下列句子譯成英文句子：
+        <div v-for="item in items" :key="item.Col1" class="question-card">
+            <h2 class="question">
+                {{item.Col1}}
+            </h2>
+            <div class="answer-container">
+                <div class="answer">
+                    <p>
+                        {{item.Col2}}
+                    </p>
+                </div>
+            </div>
+            <button onclick="toggleAnswer(this)">顯示答案</button>
+        </div>
+    </div>
+</div>
+
+    <script>
+        function toggleAnswer(button) {
+            var answerContainer = button.previousElementSibling;
+            answerContainer.classList.toggle('show');
+            button.textContent = answerContainer.classList.contains('show') ? '隱藏答案' : '顯示答案';
+        }
+    </script>
+
+<script>
+    var vd;
+    vd = [
+        {
+            Col1: "1. 你比他強壯。",
+            Col2: "1. You are stronger than he."
+        },
+        {
+            Col1: "2. 他的英文比我的好。",
+            Col2: "2. His English is better than mine."
+        },
+        {
+            Col1: "3. 他比他的弟弟更富有。",
+            Col2: "3. He is richer than his brother."
+        },
+        {
+            Col1: "4. 他是世界上最富有的人。",
+            Col2: "4. He is the richest person in the world."
+        },
+        {
+            Col1: "5. 這支筆比你的貴得多。",
+            Col2: "5. This pen is more expensive than yours."
+        },
+        {
+            Col1: "6. 喜馬拉雅山是世界上最高的山。",
+            Col2: "6. He is the tallest man on earth."
+        },
+        {
+            Col1: "7. 亞馬遜河是世界上最長的河。",
+            Col2: "7. The Amazon River is the longest river in the world."
+        },
+        {
+            Col1: "8. 他比他的爸爸高。",
+            Col2: "8. He is taller than his father."
+        },
+        {
+            Col1: "9. 他是班上最好的學生。",
+            Col2: "9. He is the best student in his class."
+        },
+        {
+            Col1: "10. 在我遇到的人中，他是最高的。",
+            Col2: "10. Among the persons whom I have met, he is the tallest."
+        }
+        
+    ];
+
+    // 使用 Vue 3 的 createApp 方法來創建應用
+    const { createApp } = Vue;
+    const app = createApp({
+        data() {
+            return {
+                items: vd
+            }
+        },
+    });
+    app.mount('#app');
+</script>
+</body>
+</html>
