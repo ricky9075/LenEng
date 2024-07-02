@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>練習四十八</title>
+    <title>練習五十六</title>
     <script src="Scripts/jquery-3.7.1.slim.min.js"></script>
     <script src="Scripts/vue3.global.js"></script>
     <style>
@@ -70,8 +70,8 @@
 </head>
 <body>
     <header>
-        <h1>11.1 問題型式的名詞子句</h1>
-        <h2>練習四十八<h2>
+        <h1>12.1 a 和 the 之不同用法</h1>
+        <h2>練習五十六<h2>
     </header>
 <style>
 header {
@@ -97,7 +97,7 @@ header h2 {
 </style>
 <div id="app">
     <div class="container">
-        將以下的中文句子譯成英文：
+        將下列中文句子譯成英文：
         <div v-for="item in items" :key="item.Col1" class="question-card">
             <h2 class="question">
                 {{item.Col1}}
@@ -126,60 +126,84 @@ header h2 {
     var vd;
     vd = [
         {
-            Col1: "1. 我不知道你是誰。",
-            Col2: "1.I do not know who you are."
+            Col1: "1. 他是一個好學生。",
+            Col2: "1. He is a good student."
         },
         {
-            Col1: "2. 請告訴我你是否是美國人?",
-            Col2: "2. Please tell me whether you are an American or not?"
+            Col1: "2. 他是那位老師都喜歡的學生。",
+            Col2: "2. He is the student whom every teacher likes."
         },
         {
-            Col1: "3. 我不記得你是否喝咖啡。",
-            Col2: "3.I do not remember whether you drink coffee or not."
+            Col1: "3. 我要做總統。",
+            Col2: "3.I want to be the president."
         },
         {
-            Col1: "4. 請問你的姊姊她去年是否去過日本。",
-            Col2: "4. Please ask your sister if she went to Japan last year."
+            Col1: "4. 這是總統。",
+            Col2: "4. This is the President."
         },
         {
-            Col1: "5. 你知道他是誰嗎？",
-            Col2: "5. Do you know who he is?"
+            Col1: "5. 請打開一扇窗。",
+            Col2: "5. Please open a window."
         },
         {
-            Col1: "6. 他從哪裡來的是一個謎（ puzzle）。",
-            Col2: "6. Where he is from remains a puzzle."
+            Col1: "6. 中華民國的總統將於明年訪問美國。",
+            Col2: "6. The President of the Republic of China will visit the U. S. A. next year."
         },
         {
-            Col1: "7. 我要找出他哥哥會不會游泳。",
-            Col2: "7. I want to find out whether his brother can swim or not."
+            Col1: "7. 我要做一個好的工程師。",
+            Col2: "7.I want to be a good engineer."
         },
         {
-            Col1: "8. 我知道他為何如此悲傷。",
-            Col2: "8.I know why he is so sad."
+            Col1: "8. 他是那位我們常常談到的老師。",
+            Col2: "8. He is the teacher whom we often talk about."
         },
         {
-            Col1: "9. 你知道瑪麗什麼時候來嗎？",
-            Col2: "9. Do you know when Mary will come?"
+            Col1: "9. Java 是一個新的計算機語言。",
+            Col2: "9. Java is a new computer language."
         },
         {
-            Col1: "10. 你知道發生了什麼事嗎？",
-            Col2: "10. Do you know what happened?"
+            Col1: "10. 我有一隻狗。",
+            Col2: "10.I have a dog."
         },
         {
-            Col1: "11. 我知道天空為什麼是藍的",
-            Col2: "11.I know why the sky is blue."
+            Col1: "11. 他是獲大獎的教授。",
+            Col2: "11. He is the professor who got a/the big award."
         },
         {
-            Col1: "12. 請告訴我你去年去哪裡工作的。",
-            Col2: "12. Please tell me where you worked last year."
+            Col1: "12. 火車站在哪裡？",
+            Col2: "12. Where is the train station?"
         },
         {
-            Col1: "13. 你知道他在談什麼嗎？",
-            Col2: "13. Do you know what he is talking about?"
+            Col1: "13. 請告訴我郵局的地址。",
+            Col2: "13. Please tell me the address of the post office."
         },
         {
-            Col1: "14. 我不懂他的問題是什麼。",
-            Col2: "14.I do not understand what his problem is."
+            Col1: "14. 這裡有郵局嗎？",
+            Col2: "14. Is there a post office here?"
+        },
+        {
+            Col1: "15. 富人常住在城裡。",
+            Col2: "15. Rich people often live in cities."
+        },
+        {
+            Col1: "16. 盲人可以用電腦。",
+            Col2: "16. Blind people can use computers."
+        },
+        {
+            Col1: "17. 太陽在東邊升起",
+            Col2: "17. The sun rises in the east"
+        },
+        {
+            Col1: "18. 宇宙是非常大的。",
+            Col2: "18. The universe is very large."
+        },
+        {
+            Col1: "19. 為什麼我們白天不能看到月亮？",
+            Col2: "19. Why can't we see the moon in the day time?"
+        },
+        {
+            Col1: "20. 總統幾歲？",
+            Col2: "20. How old is the president?"
         }
     ];
 

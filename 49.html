@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>練習四十八</title>
+    <title>練習四十九</title>
     <script src="Scripts/jquery-3.7.1.slim.min.js"></script>
     <script src="Scripts/vue3.global.js"></script>
     <style>
@@ -71,7 +71,7 @@
 <body>
     <header>
         <h1>11.1 問題型式的名詞子句</h1>
-        <h2>練習四十八<h2>
+        <h2>練習四十九<h2>
     </header>
 <style>
 header {
@@ -97,7 +97,7 @@ header h2 {
 </style>
 <div id="app">
     <div class="container">
-        將以下的中文句子譯成英文：
+        改錯：
         <div v-for="item in items" :key="item.Col1" class="question-card">
             <h2 class="question">
                 {{item.Col1}}
@@ -126,60 +126,40 @@ header h2 {
     var vd;
     vd = [
         {
-            Col1: "1. 我不知道你是誰。",
-            Col2: "1.I do not know who you are."
+            Col1: "1. Please tell me why is he so sad.",
+            Col2: "1. Please tell me why he is so sad."
         },
         {
-            Col1: "2. 請告訴我你是否是美國人?",
-            Col2: "2. Please tell me whether you are an American or not?"
+            Col1: "2. I do not know where is she from.",
+            Col2: "2.I do not know where she is from."
         },
         {
-            Col1: "3. 我不記得你是否喝咖啡。",
-            Col2: "3.I do not remember whether you drink coffee or not."
+            Col1: "3. Please tell me how many people are there in this house.",
+            Col2: "3. Please tell mc how many people there are in this house."
         },
         {
-            Col1: "4. 請問你的姊姊她去年是否去過日本。",
-            Col2: "4. Please ask your sister if she went to Japan last year."
+            Col1: "4. Let me know how old are you.",
+            Col2: "4. Let me know how old you are."
         },
         {
-            Col1: "5. 你知道他是誰嗎？",
-            Col2: "5. Do you know who he is?"
+            Col1: "5. Is he a Japanese is a mystery.",
+            Col2: "5. Whether he is Japanese or not is a mystery."
         },
         {
-            Col1: "6. 他從哪裡來的是一個謎（ puzzle）。",
-            Col2: "6. Where he is from remains a puzzle."
+            Col1: "6. Do you know who is the president of the United States?",
+            Col2: "6. Do you know who the president of the United States is?"
         },
         {
-            Col1: "7. 我要找出他哥哥會不會游泳。",
-            Col2: "7. I want to find out whether his brother can swim or not."
+            Col1: "7. May I ask you which kind of coffee do you like?",
+            Col2: "7. May I ask you which kind of coffee you like?"
         },
         {
-            Col1: "8. 我知道他為何如此悲傷。",
-            Col2: "8.I know why he is so sad."
+            Col1: "8. I can not remember how old am I?",
+            Col2: "8. I can not remember how old I am."
         },
         {
-            Col1: "9. 你知道瑪麗什麼時候來嗎？",
-            Col2: "9. Do you know when Mary will come?"
-        },
-        {
-            Col1: "10. 你知道發生了什麼事嗎？",
-            Col2: "10. Do you know what happened?"
-        },
-        {
-            Col1: "11. 我知道天空為什麼是藍的",
-            Col2: "11.I know why the sky is blue."
-        },
-        {
-            Col1: "12. 請告訴我你去年去哪裡工作的。",
-            Col2: "12. Please tell me where you worked last year."
-        },
-        {
-            Col1: "13. 你知道他在談什麼嗎？",
-            Col2: "13. Do you know what he is talking about?"
-        },
-        {
-            Col1: "14. 我不懂他的問題是什麼。",
-            Col2: "14.I do not understand what his problem is."
+            Col1: "9. What is he talking about is unclear to me.",
+            Col2: "9. What he is talking about is unclear to me."
         }
     ];
 

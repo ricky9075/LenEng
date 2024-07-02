@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>練習五十九</title>
+    <script src="Scripts/jquery-3.7.1.slim.min.js"></script>
+    <script src="Scripts/vue3.global.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .question-card {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        .question {
+            background-color: #4CAF50;
+            color: white;
+            padding: 15px;
+            margin-bottom: 0;
+        }
+        .answer-container {
+            padding: 0 15px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out, padding 0.3s ease;
+        }
+        .answer-container.show {
+            max-height: 500px; /* 調整這個值以適應你的最長答案 */
+            padding: 15px;
+        }
+        .answer {
+            opacity: 0;
+            transform: translateY(-20px);
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+        .answer-container.show .answer {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        button {
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: block;
+            width: 100%;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>12.3 冠詞使用時的例外</h1>
+        <h2>練習五十九<h2>
+    </header>
+<style>
+header {
+    text-align: center;
+    margin-bottom: 30px;
+    padding: 20px;
+    background-color: #4CAF50;
+    color: white;
+    border-radius: 8px;
+}
+
+header h1 {
+    margin: 0 0 10px 0;
+    font-size: 28px;
+}
+
+header h2 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: normal;
+    opacity: 0.8;
+}
+</style>
+<div id="app">
+    <div class="container">
+        以下的句子都有冠詞用法的錯誤，請改正這些錯誤：
+        <div v-for="item in items" :key="item.Col1" class="question-card">
+            <h2 class="question">
+                {{item.Col1}}
+            </h2>
+            <div class="answer-container">
+                <div class="answer">
+                    <p>
+                        {{item.Col2}}
+                    </p>
+                </div>
+            </div>
+            <button onclick="toggleAnswer(this)">顯示答案</button>
+        </div>
+    </div>
+</div>
+
+    <script>
+        function toggleAnswer(button) {
+            var answerContainer = button.previousElementSibling;
+            answerContainer.classList.toggle('show');
+            button.textContent = answerContainer.classList.contains('show') ? '隱藏答案' : '顯示答案';
+        }
+    </script>
+
+<script>
+    var vd;
+    vd = [
+        {
+            Col1: "1. The Girls are often good in learning languages.",
+            Col2: "1. Girls are usually good at learning languages."
+        },
+        {
+            Col1: "2. The dogs always chase the cats.",
+            Col2: "2. Dogs always chase cats."
+        },
+        {
+            Col1: "3. Do you have the time?",
+            Col2: "3. Do you have time?"
+        },
+        {
+            Col1: "4. I have not had a water for two hours.",
+            Col2: "4. I have not had water for two hours."
+        },
+        {
+            Col1: "5. There is no life without the pain.",
+            Col2: "5. There is no life without pain."
+        },
+        {
+            Col1: "6. The love is the most important thing in one's life.",
+            Col2: "6. Love is the most important thing in one's life."
+        },
+        {
+            Col1: "7. He has the wisdom.",
+            Col2: "7. He has wisdom."
+        },
+        {
+            Col1: "8. I am losing the patience.",
+            Col2: "8.I am losing patience."
+        },
+        {
+            Col1: "9. This is not time to cry.",
+            Col2: "9. This is not the time to cry."
+        },
+        {
+            Col1: "10.Pain due to losing a loved one is hard to endure.",
+            Col2: "10. The pain due to losing a loved one is hard to endure."
+        },
+        {
+            Col1: "11.Joy being a father is really great.",
+            Col2: "11.The joy of being a father is really great."
+        },
+        {
+            Col1: "12.Being honest is virtue.",
+            Col2: "12.Being honest is a virtue."
+        },
+        {
+            Col1: "13.Speaking the truth is good policy.",
+            Col2: "13. Speaking the truth is a good policy."
+        },
+        {
+            Col1: "14.Can you feel sadness of his?",
+            Col2: "14.Can you feel the sadness of his?"
+        },
+        {
+            Col1: "15.We need the air to live.",
+            Col2: "15. We need air to live."
+        },
+        {
+            Col1: "16.I do not drink the coffee. I drink the tea.",
+            Col2: "16.I do not drink coffee. I drink tea. "
+        },
+        {
+            Col1: "17.We Chinese eat the rice every day.",
+            Col2: "17. We Chinese eat rice every day."
+        },
+        {
+            Col1: "18.Water in this area is very clean.",
+            Col2: "18. The water in this area is very clean."
+        },
+        {
+            Col1: "19.There was fire in the next street last night.",
+            Col2: "19. There was a fire in the next street last night."
+        },
+        {
+            Col1: "20.Fire last night killed three kids.",
+            Col2: "20. The fire last night killed three kids."
+        },
+        {
+            Col1: "21.Coffee which you are drinking is from South America.",
+            Col2: "21. The coffee which you are drinking is from South America."
+        },
+        {
+            Col1: "22.Mary is from the Canada.",
+            Col2: "22.Mary is from Canada."
+        },
+        {
+            Col1: "23.The China is a large country.",
+            Col2: "23.China is a large country."
+        },
+        {
+            Col1: "24.Republic of China was Founded in 1911.",
+            Col2: "24.The Republic of China was founded in 1911."
+        },
+        {
+            Col1: "25.Where is the England?",
+            Col2: "25.Where is England?"
+        },
+        {
+            Col1: "26.Is the Russian in Europe.",
+            Col2: "26.Is Russia in Europe?"
+        },
+        {
+            Col1: "27.The President Lincoln is a great person.",
+            Col2: "27. President Lincoln was a great person."
+        },
+        {
+            Col1: "28.The King George was a mad king.",
+            Col2: "28. King George was a mad king."
+        },
+        {
+            Col1: "29.Yellow River is a long river.",
+            Col2: "29. The Yellow River is a long river."
+        },
+        {
+            Col1: "30.Have you been to Gobi Desert?",
+            Col2: "30. Have you been to the Gobi Desert?"
+        },
+        {
+            Col1: "31.Manila Bay is very beautiful.",
+            Col2: "31. The Manila Bay is very beautiful."
+        },
+        {
+            Col1: "32.It is hard to cross Atlantic Ocean by a small boat.",
+            Col2: "32. It is hard to cross the Atlantic Ocean by a small boat."
+        },
+        {
+            Col1: "33.Can you swim across English Channel?",
+            Col2: "33. Can you swim across the English Channel?"
+        },
+        {
+            Col1: "34.United States of America is a large country.",
+            Col2: "34. The United States of America is a large country."
+        },
+        {
+            Col1: "35.United Nations and Red Cross often work together.",
+            Col2: "35.The United Nations and the Red Cross often work together."
+        },
+        {
+            Col1: "36.When did Ottoman Empire end?",
+            Col2: "36. When did the Ottoman Empire end?"
+        },
+        {
+            Col1: "37.British Empire was large before.",
+            Col2: "37. The British Empire was large before."
+        },
+        {
+            Col1: "38.Catholic Church is one of the oldest organizations in the world.",
+            Col2: "38. The Catholic Church is one of the oldest organizations in the world."
+        },
+        {
+            Col1: "39.This cup was made in Ming Dynasty.",
+            Col2: "39. This cup was made in the Ming Dynasty."
+        },
+        {
+            Col1: "40.Renaissance is a very important era for mankind.",
+            Col2: "40. The European Renaissance was a very important era for the mankind."
+        },
+        {
+            Col1: "41.We should not go back to Dark Ages.",
+            Col2: "41. We should not go back to the Dark Ages."
+        },
+        {
+            Col1: "42.Wangs did not invite me to their house.",
+            Col2: "42. The Wangs did not invite me to their house."
+        },
+        {
+            Col1: "43.I do not like Kennedys.",
+            Col2: "43. I do not like the Kennedys."
+        },
+        {
+            Col1: "44.Chinese pay great attention to education.",
+            Col2: "44. The Chinese pay great attention to education. "
+        },
+        {
+            Col1: "45.I do not like the physics.",
+            Col2: "45.I do not like physics."
+        },
+        {
+            Col1: "46.Are you interested in the chemistry?",
+            Col2: "46. Are you interested in chemistry?"
+        },
+        {
+            Col1: "47.Did you have the lunch?",
+            Col2: "47. Did you have lunch?"
+        },
+        {
+            Col1: "48.Let us have the dinner together.",
+            Col2: "48.Let us have dinner together."
+        },
+        {
+            Col1: "49.I always have a breakfast with my family.",
+            Col2: "49.I always have breakfast with my family."
+        },
+        {
+            Col1: "50.I had big dinner last night.",
+            Col2: "50.I had a big dinner last night."
+        },
+        {
+            Col1: "51.Dinner my mother cooked for me was delicious",
+            Col2: "51. The dinner my mother cooked for me was delicious."
+        },
+        {
+            Col1: "52.I go to the church every Sunday.",
+            Col2: "52.I go to church every Sunday."
+        },
+        {
+            Col1: "53.He does not like to go to the school.",
+            Col2: "53. He does not like to go to school."
+        },
+        {
+            Col1: "54.Did you see beautiful church in the next street?",
+            Col2: "54. Did you see the beautiful church in the next street?"
+        },
+        {
+            Col1: "55.The English is so hard for me.",
+            Col2: "55. English is so hard for me."
+        },
+        {
+            Col1: "56.Do you speak the English?",
+            Col2: "56. Do you speak English?"
+        },
+        {
+            Col1: "57.Do you play the tennis?",
+            Col2: "57. Do you play tennis?"
+        },
+        {
+            Col1: "58.The swimming is good for you.",
+            Col2: "58. Swimming is good for you."
+        },
+        {
+            Col1: "59.I like the walking in the woods.",
+            Col2: "59.I like walking in the woods."
+        },
+        {
+            Col1: "60.I practice the baseball every week.",
+            Col2: "60.I practice baseball every week."
+        },
+        {
+            Col1: "",
+            Col2: ""
+        },
+    ];
+
+    // 使用 Vue 3 的 createApp 方法來創建應用
+    const { createApp } = Vue;
+    const app = createApp({
+        data() {
+            return {
+                items: vd
+            }
+        },
+    });
+    app.mount('#app');
+</script>
+</body>
+</html>

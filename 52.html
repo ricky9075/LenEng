@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>練習四十八</title>
+    <title>練習五十二</title>
     <script src="Scripts/jquery-3.7.1.slim.min.js"></script>
     <script src="Scripts/vue3.global.js"></script>
     <style>
@@ -70,8 +70,8 @@
 </head>
 <body>
     <header>
-        <h1>11.1 問題型式的名詞子句</h1>
-        <h2>練習四十八<h2>
+        <h1>11.2 以 that 開始的名詞子句</h1>
+        <h2>練習五十二<h2>
     </header>
 <style>
 header {
@@ -97,7 +97,7 @@ header h2 {
 </style>
 <div id="app">
     <div class="container">
-        將以下的中文句子譯成英文：
+        將以下句子翻譯成英文： （用 that）
         <div v-for="item in items" :key="item.Col1" class="question-card">
             <h2 class="question">
                 {{item.Col1}}
@@ -126,60 +126,84 @@ header h2 {
     var vd;
     vd = [
         {
-            Col1: "1. 我不知道你是誰。",
-            Col2: "1.I do not know who you are."
+            Col1: "1. 我不相信他是我的哥哥。",
+            Col2: "1.I do not believe that he is my brother."
         },
         {
-            Col1: "2. 請告訴我你是否是美國人?",
-            Col2: "2. Please tell me whether you are an American or not?"
+            Col1: "2. 我勸（ advice）他到美國去。",
+            Col2: "2.I advised him that he should go to America."
         },
         {
-            Col1: "3. 我不記得你是否喝咖啡。",
-            Col2: "3.I do not remember whether you drink coffee or not."
+            Col1: "3. 你相信地球是圓的嗎？",
+            Col2: "3. Do you believe that the earth is round?"
         },
         {
-            Col1: "4. 請問你的姊姊她去年是否去過日本。",
-            Col2: "4. Please ask your sister if she went to Japan last year."
+            Col1: "4. 我告訴他他一定要讀這本書。",
+            Col2: "4.I told him that he must read this book."
         },
         {
-            Col1: "5. 你知道他是誰嗎？",
-            Col2: "5. Do you know who he is?"
+            Col1: "5. 我忘記了你是個小孩。",
+            Col2: "5.I forgot that you are a kid."
         },
         {
-            Col1: "6. 他從哪裡來的是一個謎（ puzzle）。",
-            Col2: "6. Where he is from remains a puzzle."
+            Col1: "6. 你能相信我會講英文（ speak English）嗎？",
+            Col2: "6. Can you believe that I can speak English?"
         },
         {
-            Col1: "7. 我要找出他哥哥會不會游泳。",
-            Col2: "7. I want to find out whether his brother can swim or not."
+            Col1: "7. 他沒有來令我生氣（ make me angry）。",
+            Col2: "7. That he did not show up makes me angry."
         },
         {
-            Col1: "8. 我知道他為何如此悲傷。",
-            Col2: "8.I know why he is so sad."
+            Col1: "8. 我認為他是個好人。",
+            Col2: "8.1 think that he is a good man."
         },
         {
-            Col1: "9. 你知道瑪麗什麼時候來嗎？",
-            Col2: "9. Do you know when Mary will come?"
+            Col1: "9. 不要忘記世界上有很多窮人。",
+            Col2: "9. Do not forget that there are a lot of poor people in the world."
         },
         {
-            Col1: "10. 你知道發生了什麼事嗎？",
-            Col2: "10. Do you know what happened?"
+            Col1: "10. 我知道他教英文。",
+            Col2: "10.I know that he teaches English."
         },
         {
-            Col1: "11. 我知道天空為什麼是藍的",
-            Col2: "11.I know why the sky is blue."
+            Col1: "11. 我從不知道他如此聰明。",
+            Col2: "11.I never knew that he is so smart."
         },
         {
-            Col1: "12. 請告訴我你去年去哪裡工作的。",
-            Col2: "12. Please tell me where you worked last year."
+            Col1: "12. 我知道他不能來。",
+            Col2: "12.I know that he can not come over."
         },
         {
-            Col1: "13. 你知道他在談什麼嗎？",
-            Col2: "13. Do you know what he is talking about?"
+            Col1: "13. 我希望他能來。",
+            Col2: "13.I hope that he can come."
         },
         {
-            Col1: "14. 我不懂他的問題是什麼。",
-            Col2: "14.I do not understand what his problem is."
+            Col1: "14. 你相不相信他在台灣長大的？",
+            Col2: "14. Can you believe that he grew up in Taiwan?"
+        },
+        {
+            Col1: "15. 我無法決定他該不該唸大學。",
+            Col2: "15.I cannot decide whether he should go to college or not."
+        },
+        {
+            Col1: "16. 你告訴我他去年到美國了。",
+            Col2: "16. You told me that he went to America last year."
+        },
+        {
+            Col1: "17. 這位老師不知道我的爸爸也是老師。",
+            Col2: "17. This teacher did not know that my father is also a teacher."
+        },
+        {
+            Col1: "18. 我要問他明天會不會來我家。",
+            Col2: "18. I'd like to ask him whether he will come to my house tomorrow."
+        },
+        {
+            Col1: "19. 你知道這火車到台北嗎？",
+            Col2: "19. Do you know whether this train goes to Taipei or not?"
+        },
+        {
+            Col1: "20. 請告訴我你會不會說英文。",
+            Col2: "20. Please tell me whether you can speak English or not."
         }
     ];
 
